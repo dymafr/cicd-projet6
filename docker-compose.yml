@@ -1,13 +1,12 @@
-version: '3.9'
 services:
   node-api:
     image: dymafr/cicd-projet6-node-api
     ports:
-      - '3000:80'
+      - "3000:80"
   frontend:
     image: dymafr/cicd-projet6-frontend
     ports:
-      - '80:80'
+      - "80:80"
   cypress:
     image: cypress/included
     working_dir: /e2e
@@ -15,7 +14,7 @@ services:
       - NO_COLOR=1
     volumes:
       - ./frontend:/e2e
-    entrypoint: cypress run --config baseUrl=http://frontend --headless --browser chrome -C cypress.config.js
+    entrypoint: cypress run --config baseUrl=http://frontend --headless --browser chrome -C cypress.config.cjs
     depends_on:
       - frontend
       - node-api

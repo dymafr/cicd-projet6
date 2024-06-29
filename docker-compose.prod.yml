@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
   node-api:
     image: dymafr/cicd-projet6-node-api
